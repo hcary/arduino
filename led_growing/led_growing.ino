@@ -1,22 +1,17 @@
-//Blinking_LED
-//turn on the LED for half a second,then off for half a second,repeatedly
-//support@sunfounder.com
-//www.sunfounder.com
-//2015.5.7
-/************************************************/
-//const int p9 = 9;//the number of the LED pin 9
-//const int p10 = 10;//the number of the LED pin 9
-//const int p11 = 11;
-//const int p12 = 12;
+//led_growing
+// Harvey Cary
+// hdcary3@gmail.com
+// 8/2016
 
-const int dtime = 50;
-const int lowPin = 5;
-const int highPin = 12;
+const int dtime = 50;     // Delay time
+const int lowPin = 5;     // Lowest pin used
+const int highPin = 12;   // Highest pin used
 
 /************************************************/
 void setup()
 {
 
+  // Loop from lowest pin to highest pin setting pin mode
   for(int x = lowPin; x <= highPin; x = x + 1){
     pinMode(x,OUTPUT);
   } 
@@ -28,17 +23,17 @@ void loop()
 {
 
   for(int x = lowPin; x <= highPin; x = x + 1){
-    pinOn(x, HIGH);
+    pinSwitch(x, HIGH);
   } 
 
   for(int x = highPin; x >= lowPin; x = x - 1){
-    pinOn(x, LOW);
+    pinSwitch(x, LOW);
   } 
   
 }
 /*************************************************/
 
-void pinOn( int pinNum, int level )
+void pinSwitch( int pinNum, int level )
 {
 
   digitalWrite(pinNum, level);//turn the LED on
