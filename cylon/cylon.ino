@@ -1,6 +1,7 @@
 // cylon
 // Harvey Cary
 // hdcary3@gmail.com
+// https://github.com/hcary/arduino
 // 8/2016
 
 /************************************************/
@@ -49,7 +50,7 @@ void loop()
 }
 /*************************************************/
 
-void pinOn( int pinNum, int level )
+void pinSwitch( int pinNum, int level )
 {
 
   digitalWrite(pinNum, level);//turn the LED on
