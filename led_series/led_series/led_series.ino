@@ -6,10 +6,10 @@
 
 const int delay_time1   = 50;     // Delay time
 const int delay_time2   = 10;
-const int blinkDelay   = 500;
+const int blinkDelay    = 500;
 const int lowPin        = 5;     // Lowest pin used
 const int highPin       = 12;   // Highest pin used
-const int interation    = 4;
+const int interation    = 2;
 
 /************************************************/
 void setup()
@@ -52,7 +52,13 @@ void loop()
   {
     allOnOff();
   }
+
+  allOff();
   
+  for(int j = 1; j <= interation; j = j + 1)
+  {
+    insideOut();
+  }
 }
 /*************************************************/
 
@@ -168,7 +174,38 @@ void allOnOff()
   
 }
 
+void insideOut()
+{
 
+  Serial.print(" Inside Out ");
+  Serial.println();
+  
+  int ledStart1 = 8;
+  int ledStart2 = 9;
+  int direction = 0;
+
+  int led1 = ledStart1;
+  int led2 = ledStart2;
+  
+  for(int x = 0; x <= 3; x = x + 1)
+  {
+    pinSwitch(led1, HIGH, delay_time1);
+    pinSwitch(led2, HIGH, delay_time1);   
+    led1 = led1 - 1;
+    led2 = led2 + 1;
+  }
+    
+  for(int x = 0; x <= 4; x = x + 1)
+  {
+  
+    pinSwitch(led1, LOW, delay_time1);
+    pinSwitch(led2, LOW, delay_time1);  
+    led1 = led1 + 1;
+    led2 = led2 - 1;      
+  } // for(int x = 0; x <= 3; x = x + 1) 
+
+
+}
 
 
 
