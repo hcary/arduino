@@ -35,7 +35,8 @@ void loop()
     {
       glowOn(j);
     }
-  delay(1000);
+  
+    delay(500);
   
     for(int j = lowPin; j <= highPin; j = j + 1)
     {
