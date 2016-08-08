@@ -87,24 +87,6 @@ void setPinAnalog()
     
 }
 
-void setPinDigital()
-{
-
-  for(int x = lowPin; x <= highPin; x = x + 1){
-    pinMode(x,OUTPUT);
-  } 
-  
-}
-void pinSwitch( int pinNum, int level, int myDelay )
-{
-
-  digitalWrite(pinNum, level);//turn the LED on
-  delay(myDelay);
-  
-}
-
-
-
 void cylon()
 {
 
