@@ -29,16 +29,16 @@ void setup()
 void loop()
 {
 
-  for(int j = 1; j <= interation; j = j + 1)
+  for(int k = 1; k <= interation; k = k + 1)
   {
     for(int j = lowPin; j <= highPin; j = j + 1)
     {
       glowOn(j);
     }
   
-    delay(500);
+    delay(100);
   
-    for(int j = lowPin; j <= highPin; j = j + 1)
+    for(int j = highPin; j >= lowPin; j = j -1)
     {
       glowOff(j);
     }
@@ -229,11 +229,10 @@ void glowOn( int myPin )
   
   for (int a=0; a<=255;a++)               //loop from 0 to 255
   {
-    analogWrite(myPin, a);               // set the brightness of pin 9:
-    delay(5);                             //wait for 8 ms            
+    analogWrite(myPin, a);                // set the brightness of pin 9:
+    delay(5);                             //wait for X ms            
   }
 
-  //delay(800); 
 }
 
 void glowOff( int myPin )
@@ -245,11 +244,18 @@ void glowOff( int myPin )
   
   for (int a=255; a>=0;a--)             //loop from 255 down to 0
   {
-    analogWrite(myPin, a);               // set the brightness of pin 9:
-    delay(5);                             //wait for 8 ms  
+    analogWrite(myPin, a);              // set the brightness of pin 9:
+    delay(5);                           //wait for X ms  
   }
 }
 
+void pinSwitch( int pinNum, int level, int dtime )
+{
+
+  digitalWrite(pinNum, level);//turn the LED on
+  delay(dtime);
+  
+}
 
 
 
